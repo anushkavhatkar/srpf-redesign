@@ -10,6 +10,8 @@
         :root {
             --bs-primary: #003071;
             --bs-primary-rgb: 0, 48, 113;
+            --bs-primary-50: #F0F4F8;
+            --bs-primary-100: #E3EBF4;
         }
         
         .bg-primary {
@@ -101,11 +103,11 @@
     </nav>
 
     <!-- Header Section Wrapper -->
-    <div style="width: 100vw; background-color: #003071; padding: 1.5rem;">
-        <section style="width: 90vw; margin: 0 auto; padding-top: 3em; padding-bottom: 6em;">
+    <div style="width: 100vw; background-color: var(--bs-primary-50, #F0F4F8); padding: 0em;">
+        <section style="width: 90vw; margin: 0 auto; padding-top: 5em; padding-bottom: 6em;">
             <div class="d-flex align-items-center gap-3" style="margin-bottom: 1.5em;">
                 <img src="images/srpf-logo.webp" alt="SRPF Logo" style="height: 60px; width: auto;">
-                <h1 class="display-4 text-start mb-0" style="font-weight: 700; color: white;">Maharashtra State Reserve Police Force</h1>
+                <h1 class="display-4 text-start mb-0" style="font-weight: 700; color: #003071;">Maharashtra State Reserve Police Force</h1>
             </div>
             <!-- Search Bar -->
             <div class="mb-4">
@@ -122,10 +124,34 @@
         </section>
     </div>
 
+    <!-- 4-Column Stats Section -->
+    <section class="d-flex" style="width: 100vw; gap: 1em; padding: 3em; background-color: #003071;">
+        <div style="width: 90vw; margin: 0 auto; display: flex; gap: 1em;">
+            <div style="flex: 1;">
+                <div class="h2 text-center" style="color: white;">18000+</div>
+                <div class="h6 text-center" style="color: white;">Police Personnels</div>
+            </div>
+            <div style="flex: 1;">
+                <div class="h2 text-center" style="color: white;">2</div>
+                <div class="h6 text-center" style="color: white;">Ranges</div>
+            </div>
+            <div style="flex: 1;">
+                <div class="h2 text-center" style="color: white;">19</div>
+                <div class="h6 text-center" style="color: white;">Groups</div>
+            </div>
+            <div style="flex: 1;">
+                <div class="h2 text-center" style="color: white;">1</div>
+                <div class="h6 text-center" style="color: white;">Training Center</div>
+            </div>
+        </div>
+    </section>
+
     <!-- Carousel Wrapper -->
-    <div style="width: 90vw; margin: 0 auto; padding-top: 4em; padding-bottom: 4em;">
-        <!-- Carousel -->
-        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div style="width: 90vw; margin: 0 auto; padding-top: 5em; padding-bottom: 5em;">
+        <div class="d-flex" style="gap: 4em;">
+            <!-- Carousel -->
+            <div style="flex: 1;">
+            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <!-- Progress Indicator (Dots) -->
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -187,6 +213,13 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
+        </div>
+            </div>
+            
+            <!-- Quick Updates Section -->
+            <section style="flex: 1;">
+                <h1>Quick Updates</h1>
+            </section>
         </div>
     </div>
 
