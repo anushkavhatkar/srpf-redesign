@@ -72,11 +72,9 @@
     <!-- UX4G Navbar Component -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <!-- Blank white circle on the left -->
+            <!-- SRPF Logo -->
             <a class="navbar-brand" href="#">
-                <svg width="30" height="30" class="d-inline-block align-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                    <circle cx="8" cy="8" r="7" fill="white" stroke="#dee2e6" stroke-width="1"/>
-                </svg>
+                <img src="images/srpf-logo.webp" alt="SRPF Logo" class="d-inline-block align-top" style="height: 40px; width: auto;">
             </a>
             <!-- Toggler button for mobile menu -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,10 +100,30 @@
         </div>
     </nav>
 
-    <!-- Content Wrapper -->
-    <div style="width: 90vw; margin: 0 auto;">
-        <h1 class="display-4 text-start">Maharashtra State Reserve Police Force</h1>
-        
+    <!-- Header Section Wrapper -->
+    <div style="width: 100vw; background-color: #003071; padding: 1.5rem;">
+<section style="width: 90vw; margin: 0 auto; padding-top: 3em; padding-bottom: 3em;">
+            <div class="d-flex align-items-center gap-3" style="margin-bottom: 1.5em;">
+                <img src="images/srpf-logo.webp" alt="SRPF Logo" style="height: 60px; width: auto;">
+                <h1 class="display-4 text-start mb-0" style="font-weight: 700; color: white;">Maharashtra State Reserve Police Force</h1>
+            </div>
+            <!-- Search Bar -->
+            <div class="mb-4">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-primary" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                        <span class="visually-hidden">Search</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Carousel Wrapper -->
+    <div style="width: 90vw; margin: 0 auto; padding-top: 4em; padding-bottom: 4em;">
         <!-- Carousel -->
         <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <!-- Progress Indicator (Dots) -->
@@ -113,33 +131,50 @@
             <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="10" aria-label="Slide 11"></button>
         </div>
         
         <!-- Carousel Items -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <div class="d-block w-100 bg-primary text-white" style="height: 60vh; display: flex; align-items: center; justify-content: center;">
-                    <div class="text-center">
-                        <h2>Slide 1</h2>
-                        <p>Maharashtra SRPF - First Slide</p>
-                    </div>
-                </div>
+                <img src="images/hero-award.jpeg" class="d-block w-100" alt="Award" style="height: 60vh; object-fit: cover;">
             </div>
             <div class="carousel-item">
-                <div class="d-block w-100 bg-success text-white" style="height: 60vh; display: flex; align-items: center; justify-content: center;">
-                    <div class="text-center">
-                        <h2>Slide 2</h2>
-                        <p>Maharashtra SRPF - Second Slide</p>
-                    </div>
-                </div>
+                <img src="images/hero-ceremony.jpeg" class="d-block w-100" alt="Ceremony" style="height: 60vh; object-fit: cover;">
             </div>
             <div class="carousel-item">
-                <div class="d-block w-100 bg-info text-white" style="height: 60vh; display: flex; align-items: center; justify-content: center;">
-                    <div class="text-center">
-                        <h2>Slide 3</h2>
-                        <p>Maharashtra SRPF - Third Slide</p>
-                    </div>
-                </div>
+                <img src="images/hero-group.jpeg" class="d-block w-100" alt="Group" style="height: 60vh; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="images/hero-helping.png" class="d-block w-100" alt="Helping" style="height: 60vh; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="images/hero-march.png" class="d-block w-100" alt="March" style="height: 60vh; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="images/hero-marchpast.png" class="d-block w-100" alt="March Past" style="height: 60vh; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="images/hero-meditation-2.jpeg" class="d-block w-100" alt="Meditation 2" style="height: 60vh; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="images/hero-meditation.jpeg" class="d-block w-100" alt="Meditation" style="height: 60vh; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="images/hero-salute.png" class="d-block w-100" alt="Salute" style="height: 60vh; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="images/hero-service.png" class="d-block w-100" alt="Service" style="height: 60vh; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="images/hero-sports.jpeg" class="d-block w-100" alt="Sports" style="height: 60vh; object-fit: cover;">
             </div>
         </div>
         
