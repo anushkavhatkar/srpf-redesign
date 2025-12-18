@@ -62,19 +62,29 @@
     <div style="width: 100vw; background-color: var(--srpf-surface-2); padding: 0em;">
         <section style="width: 80vw; margin: 0 auto; padding-top: 4em; padding-bottom: 4em;">
             <div class="d-flex align-items-center gap-3" style="margin-bottom: 1.5em;">
-                <img src="images/srpf-logo.webp" alt="SRPF Logo" style="height: 60px; width: auto; opacity: 0.96;">
                 <h1 class="display-4 text-start mb-0" style="font-weight: 700; letter-spacing: -0.05px; color: #003071;">Maharashtra State Reserve Police Force</h1>
             </div>
             <!-- Search Bar -->
             <div class="mb-4">
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
-                    <button class="btn btn-primary" type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                        </svg>
-                        <span class="visually-hidden">Search</span>
-                    </button>
+                    <div class="srpf-search" role="search">
+                        <button class="srpf-search__icon-btn" type="button" aria-label="Search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M10.5 3a7.5 7.5 0 1 0 4.63 13.4l3.98 3.98a1 1 0 0 0 1.42-1.42l-3.98-3.98A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+
+                        <div class="srpf-search__content">
+                            <input class="srpf-search__input" type="search" placeholder="Search for" aria-label="Search for" />
+                        </div>
+
+                        <button class="srpf-search__icon-btn" type="submit" aria-label="Voice search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3Z" fill="currentColor"/>
+                                <path d="M7 11a1 1 0 1 0-2 0 7 7 0 0 0 6 6.92V20H9a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-2v-2.08A7 7 0 0 0 19 11a1 1 0 1 0-2 0 5 5 0 0 1-10 0Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
                 </form>
             </div>
         </section>
@@ -83,6 +93,9 @@
     <!-- 4-Column Stats Section -->
     <section class="d-flex" style="width: 100vw; gap: 1em; padding:5em; background-color: #003071;">
         <div style="width: 80vw; margin: 0 auto; display: flex; gap: 1em;">
+            <div style="flex: 1; border-right: 2px solid #9DA3AF; padding-right: 1em; display: flex; align-items: center; justify-content: center;">
+                <img src="images/srpf-logo.webp" alt="SRPF Logo" style="height: 60px; width: auto; opacity: 0.96;">
+            </div>
             <div style="flex: 1; border-right: 2px solid #9DA3AF; padding-right: 1em;">
                 <div class="h2 text-center" style="color: white; font-weight: 400; font-family: &quot;IBM Plex Mono&quot;, monospace;">18000+</div>
                 <div class="h6 text-center" style="color: white;">Police Personnels</div>
@@ -222,7 +235,7 @@
     <div style="width: 80vw; margin: 0 auto; padding-top: 5em; padding-bottom: 5em;">
         <div class="d-flex flex-wrap" style="gap: 2em;">
             <div style="flex: 1 1 calc(33.333% - 2em); min-width: 250px;">
-                <h2 style="font-weight: 700;">About us</h2>
+                <h2 class="srpf-section-title--about">About us</h2>
                 <div style="width: 7.5%; height: 3px; background-color: #FB923C; margin-top: 0.5em; margin-bottom: 1em;"></div>
                 <div class="list-group mt-4">
                     <a href="#" class="list-group-item list-group-item-action">History of SRPF</a>

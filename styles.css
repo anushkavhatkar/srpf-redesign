@@ -1,0 +1,292 @@
+/* Custom overrides for UX4G (loaded after the CDN CSS).
+   Keep these rules opinionated but small, so we improve the UI without fighting the system. */
+
+/* -----------------------------
+   Font loading (local)
+------------------------------ */
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/IBM_Plex_Mono/IBMPlexMono-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/IBM_Plex_Mono/IBMPlexMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/IBM_Plex_Mono/IBMPlexMono-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* -----------------------------
+   Theme tokens (Bootstrap/UX4G)
+------------------------------ */
+:root {
+  /* Keep your existing primary */
+  --bs-primary: #003071;
+  --bs-primary-rgb: 0, 48, 113;
+  --bs-primary-50: #f0f4f8;
+  --bs-primary-100: #e3ebf4;
+
+  /* Add a few useful neutrals and radii */
+  --srpf-text: #0f172a;
+  --srpf-muted: #475569;
+  --srpf-border: #e2e8f0;
+  --srpf-surface: #ffffff;
+  --srpf-surface-2: #f8fafc;
+  --srpf-radius: 12px;
+  --srpf-radius-sm: 10px;
+  --srpf-shadow-sm: 0 1px 2px rgba(2, 6, 23, 0.06), 0 1px 1px rgba(2, 6, 23, 0.04);
+  --srpf-shadow-md: 0 12px 30px rgba(2, 6, 23, 0.10);
+  --srpf-ring: 0 0 0 4px rgba(0, 48, 113, 0.18);
+}
+
+/* -----------------------------
+   Global typography + base
+------------------------------ */
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: var(--srpf-text);
+  background-color: var(--srpf-surface);
+}
+
+/* Better default link styling without looking “web-1.0” */
+a {
+  color: var(--bs-primary);
+  text-underline-offset: 0.14em;
+}
+a:hover,
+a:focus {
+  color: #002052;
+}
+
+/* -----------------------------
+   Focus + accessibility
+------------------------------ */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--srpf-ring);
+  border-radius: 8px;
+}
+
+/* -----------------------------
+   Bootstrap/UX4G component overrides
+------------------------------ */
+
+/* Primary helpers (keep your existing intent, but slightly refined) */
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+.border-primary {
+  border-color: var(--bs-primary) !important;
+}
+
+/* Buttons: modern radius, consistent hover/active, subtle elevation */
+.btn {
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease, border-color 140ms ease;
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  box-shadow: var(--srpf-shadow-sm);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #002052;
+  border-color: #001a3d;
+  box-shadow: var(--srpf-shadow-md);
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  background-color: #001a3d;
+  border-color: #001a3d;
+  box-shadow: var(--srpf-shadow-sm);
+  transform: translateY(0);
+}
+
+/* Inputs: clearer border, slightly larger padding */
+.form-control {
+  border-radius: 10px;
+  border-color: var(--srpf-border);
+  padding: 0.7rem 0.9rem;
+}
+.form-control:focus {
+  border-color: rgba(0, 48, 113, 0.45);
+  box-shadow: var(--srpf-ring);
+}
+
+/* Navbar: subtle bottom border + cleaner spacing */
+.navbar {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--srpf-border);
+}
+.navbar .nav-link {
+  color: var(--srpf-muted);
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--bs-primary);
+  background: rgba(0, 48, 113, 0.06);
+}
+.nav-link.active {
+  color: var(--bs-primary) !important;
+  background: rgba(0, 48, 113, 0.10);
+}
+
+/* List groups: card-like items */
+.list-group-item {
+  border-color: var(--srpf-border);
+}
+.list-group-item-action {
+  border-radius: var(--srpf-radius-sm);
+  margin-bottom: 0.5rem;
+  box-shadow: 0 0 0 rgba(2, 6, 23, 0);
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+  text-decoration: none;
+}
+.list-group-item-action:hover,
+.list-group-item-action:focus {
+  background-color: transparent;
+  transform: none;
+  box-shadow: none;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+/* Carousel indicators: align with primary */
+.carousel-indicators [data-bs-target].active {
+  background-color: var(--bs-primary);
+}
+
+/* -----------------------------
+   Section title overrides
+------------------------------ */
+.srpf-section-title--about {
+  font-weight: 800 !important;
+}
+
+/* -----------------------------
+   Search bar (Figma-inspired)
+------------------------------ */
+.srpf-search {
+  /* Figma tokens */
+  --srpf-search-height: 56px;
+  --srpf-search-radius: 8px; /* radius-md */
+  --srpf-search-bg: #ffffff; /* Neutral/0 */
+  --srpf-search-stroke: #dddddd; /* Stroke/100 */
+  --srpf-search-stroke-hover: #613af5; /* Primary/Source (hover state in Figma) */
+  --srpf-search-focus: rgba(97, 58, 245, 0.48); /* Primary Transparent/48% */
+  --srpf-search-text: #212121; /* Text/Dark */
+  --srpf-search-muted: rgba(33, 33, 33, 0.48); /* Text/Disabled */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: var(--srpf-search-height);
+  border-radius: var(--srpf-search-radius);
+  background: var(--srpf-search-bg);
+  border: 1px solid var(--srpf-search-stroke);
+  padding: 0;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.srpf-search:hover {
+  border-color: var(--srpf-search-stroke-hover);
+}
+
+.srpf-search:focus-within {
+  border-color: var(--srpf-search-stroke);
+  box-shadow: none;
+}
+
+.srpf-search__icon-btn {
+  appearance: none;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--srpf-search-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--srpf-search-height);
+  width: 56px; /* square touch target like Figma icon area */
+  padding: 0;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.srpf-search__icon-btn:focus-visible {
+  box-shadow: 0 0 0 4px rgba(97, 58, 245, 0.24);
+  border-radius: 8px;
+}
+
+.srpf-search__content {
+  flex: 1 1 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 8px; /* pr radius-md in Figma */
+  min-width: 0;
+}
+
+.srpf-search__input {
+  appearance: none;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--srpf-search-text);
+  width: 100%;
+  min-width: 0;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  padding: 0;
+}
+
+.srpf-search__input:focus,
+.srpf-search__input:focus-visible,
+.srpf-search__input:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.srpf-search__input::placeholder {
+  color: var(--srpf-search-muted);
+}
+
+
